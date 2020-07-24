@@ -6,28 +6,9 @@ class Counter extends Component {
     tags: [],
   };
 
-  // constructor() {
-  //   super();
-  //   this.handleIncrement = this.handleIncrement.bind(this);
-  // }
-
-  renderTags() {
-    if (this.state.tags.length === 0) {
-      return <p>There are no tags!</p>;
-    } else {
-      return (
-        <ul>
-          {/* does same as a for each loop */}
-          {this.state.tags.map((tag) => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
-      );
-    }
-  }
-
+  //arrow function instead of using a constructor with this.method.bind(this)
   handleIncrement = () => {
-    console.log("Increment Clicked " + this.state.count);
+    this.setState({ count: this.state.count + 1 });
   };
 
   render() {
